@@ -1,0 +1,31 @@
+From: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+Date: Wed, 1 Oct 2014 07:42:00 +0200
+Subject: Fix build with automake 1.12
+
+Treating warnings as errors break the build with:
+
+[   33s] /usr/share/automake-1.12/am/ltlibrary.am: warning: 'libmpc.la': linking libtool libraries using a non-POSIX
+[   33s] /usr/share/automake-1.12/am/ltlibrary.am: archiver requires 'AM_PROG_AR' in 'configure.ac'
+[   33s] src/Makefile.am:4:   while processing Libtool library 'libmpc.la'
+[   33s] /usr/share/automake-1.12/am/ltlibrary.am: warning: 'libmpc-tests.la': linking libtool libraries using a non-POSIX
+[   33s] /usr/share/automake-1.12/am/ltlibrary.am: archiver requires 'AM_PROG_AR' in 'configure.ac'
+[   33s] tests/Makefile.am:17:   while processing Libtool library 'libmpc-tests.la'
+[   33s] autoreconf: automake failed with exit status: 1
+[   33s] error: Bad exit status from /var/tmp/rpm-tmp.sFMxLO (%build)
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index fc47412..a6f5c74 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -27,7 +27,7 @@ AC_INIT(mpc, 0.9, mpc-discuss@lists.gforge.inria.fr)
+ AC_CONFIG_SRCDIR([src/mpc-impl.h])
+ AC_CONFIG_HEADER([config.h])
+ 
+-AM_INIT_AUTOMAKE([1.9 -Wall -Werror])
++AM_INIT_AUTOMAKE([1.9 -Wall])
+ AM_MAINTAINER_MODE
+ 
+ AC_CANONICAL_HOST

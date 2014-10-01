@@ -1,3 +1,12 @@
+From: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+Date: Wed, 1 Oct 2014 07:41:39 +0200
+Subject: mpc-r1119-rebased-build-fix
+
+---
+ configure.ac | 4 ++++
+ m4/mpc.m4    | 2 --
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
 diff --git a/configure.ac b/configure.ac
 index b127462..fc47412 100644
 --- a/configure.ac
