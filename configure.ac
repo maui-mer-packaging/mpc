@@ -27,7 +27,7 @@ AC_INIT(mpc, 0.9, mpc-discuss@lists.gforge.inria.fr)
 AC_CONFIG_SRCDIR([src/mpc-impl.h])
 AC_CONFIG_HEADER([config.h])
 
-AM_INIT_AUTOMAKE([1.9 -Wall -Werror])
+AM_INIT_AUTOMAKE([1.9 -Wall])
 AM_MAINTAINER_MODE
 
 AC_CANONICAL_HOST
