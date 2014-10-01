@@ -105,6 +105,10 @@ AC_COMPILE_IFELSE([AC_LANG_SOURCE([[
  AC_MSG_ERROR([gmp.h can't be found, or is unusable.])
 ])
 
+# look for EGREP and SED here, see continued problem
+# at http://lists.gforge.inria.fr/pipermail/mpc-discuss/2012-January/001056.html
+AC_PROG_EGREP
+AC_PROG_SED
 dnl Check for GMP CFLAGS in gmp.h
 if test -z "$user_redefine_cc" ; then
    MPC_GMP_CC_CFLAGS
